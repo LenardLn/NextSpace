@@ -40,7 +40,7 @@ export default async function BlogPostPage({
     <div>
       <h1 className="text-3xl font-bold pb-5">{post.title}</h1>
       <p>
-        <span className="pr-8"></span>
+        <span className="pr-7"></span>
         {post.content}
       </p>
     </div>
