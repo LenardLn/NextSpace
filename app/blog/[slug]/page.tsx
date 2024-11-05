@@ -1,4 +1,4 @@
-export const revalidate = 1200; // not necessary, just for ISR demonstration
+export const revalidate = 1200;
 
 export interface Post {
   title: string;
@@ -6,30 +6,17 @@ export interface Post {
   slug: string;
 }
 
-export async function generateStaticParams() {
-  const posts: Post[] = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`).then(
-    (res) => res.json()
-  );
-
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
-
 export default async function BlogPostPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // Await params to get the slug value
   const { slug } = await params;
 
-  // Fetch the posts data
-  const posts: Post[] = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`).then(
-    (res) => res.json()
-  );
+  const posts: Post[] = await fetch(
+    `${process.env.VERCEL_URL}api/content`
+  ).then((res) => res.json());
 
-  // Find the post that matches the slug
   const post = posts.find((post) => post.slug === slug);
 
   if (!post) {

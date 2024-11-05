@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export default async function Blog() {
-  const posts = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`).then((res) =>
-    res.json()
+  const posts = await fetch(`${process.env.VERCEL_URL}api/content`).then(
+    (res) => res.json()
   );
 
   return (
