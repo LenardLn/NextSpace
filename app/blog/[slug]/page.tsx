@@ -7,7 +7,7 @@ export interface Post {
 }
 
 export async function generateStaticParams() {
-  const posts: Post[] = await fetch("http://localhost:3000/api/content").then(
+  const posts: Post[] = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`).then(
     (res) => res.json()
   );
 
@@ -15,10 +15,6 @@ export async function generateStaticParams() {
     slug: post.slug,
   }));
 }
-
-// interface Props {
-//   params: { slug: string };
-// }
 
 export default async function BlogPostPage({
   params,
@@ -29,7 +25,7 @@ export default async function BlogPostPage({
   const { slug } = await params;
 
   // Fetch the posts data
-  const posts: Post[] = await fetch("http://localhost:3000/api/content").then(
+  const posts: Post[] = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`).then(
     (res) => res.json()
   );
 
@@ -42,8 +38,11 @@ export default async function BlogPostPage({
 
   return (
     <div>
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
+      <h1 className="text-3xl font-bold pb-5">{post.title}</h1>
+      <p>
+        <span className="pr-8"></span>
+        {post.content}
+      </p>
     </div>
   );
 }
