@@ -1,4 +1,3 @@
-// auth.ts (or auth.js)
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
