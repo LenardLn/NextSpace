@@ -8,10 +8,10 @@ export default async function Dashboard() {
 
   if (!session) redirect("api/auth/signin");
 
-  const currentUserEmail = session?.user?.email!;
-  const user = await prisma.user.findUnique({
+  const currentUser = session?.user?.name!;
+  const user = await prisma.user.findFirst({
     where: {
-      email: currentUserEmail,
+      name: currentUser,
     },
   });
 
