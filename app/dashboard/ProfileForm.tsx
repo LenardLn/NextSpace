@@ -40,7 +40,6 @@ export function ProfileForm({ user }: any) {
             <input
               type="text"
               id="name"
-              disabled
               autoFocus
               name="name"
               autoComplete="name"

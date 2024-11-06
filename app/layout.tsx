@@ -18,7 +18,9 @@ export default function RootLayout({
       <html lang="en">
         <body className="mx-0 lg:mx-[min(25vw,50vh)] mt-10">
           <NavMenu />
-          <main className="!bg-white">{children}</main>
+          <main className="!bg-white border-blue-600 border-2 rounded-sm">
+            {children}
+          </main>
         </body>
       </html>
     </AuthProvider>
