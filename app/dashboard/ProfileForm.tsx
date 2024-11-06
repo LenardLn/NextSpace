@@ -40,7 +40,6 @@ export function ProfileForm({ user }: any) {
             <input
               type="text"
               id="name"
-              autoFocus
               name="name"
               autoComplete="name"
               defaultValue={user?.name ?? ""}
