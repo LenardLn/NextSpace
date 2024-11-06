@@ -94,7 +94,7 @@ export function ProfileForm({ user }: any) {
           <button
             type="submit"
             onClick={submitAlert}
-            className="mt-5 bg-blue-600 text-white p-3 rounded-lg transition duration-300 ease-in-out hover:bg-transparent hover:text-black hover:outline-4 hover:outline-black"
+            className="mt-5 bg-blue-600 text-white p-3 rounded-lg "
           >
             Save
           </button>
