@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export default async function Blog() {
-  const posts = await fetch(`https://${process.env.VERCEL_URL}/blog.json`).then(
-    (res) => res.json()
+  const posts = await fetch(`${process.env.VERCEL_URL}/blog.json`).then((res) =>
+    res.json()
   );
 
   return (

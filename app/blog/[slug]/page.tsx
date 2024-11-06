@@ -13,9 +13,9 @@ export default async function BlogPostPage({
 }) {
   const { slug } = await params;
 
-  const posts: Post[] = await fetch(
-    `https://${process.env.VERCEL_URL}/blog.json`
-  ).then((res) => res.json());
+  const posts: Post[] = await fetch(`${process.env.VERCEL_URL}/blog.json`).then(
+    (res) => res.json()
+  );
 
   const post = posts.find((post) => post.slug === slug);
 
