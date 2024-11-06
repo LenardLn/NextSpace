@@ -25,7 +25,7 @@ export default async function UserProfile({
     <div className="grid place-items-center gap-5">
       <h1 className="text-3xl font-bold">{name}</h1>
       <img
-        className="w-[220px] h-[220px] sm:w-[25rem] sm:h-[25rem]"
+        className="w-[220px] h-[220px] sm:w-[25rem] sm:h-[25rem] rounded-full"
         src={image ?? "/mememan.webp"}
         alt={`${name}'s profile`}
       />

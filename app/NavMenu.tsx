@@ -19,9 +19,10 @@ const NavMenu = async () => {
           className="hidden sm:block"
           priority
         />
+        <p className="block sm:hidden text-white font-bold">HOME</p>
       </Link>
 
-      <ul className="list-none flex mr-4">
+      <ul className="list-none flex sm:mr-1 mr-4 ">
         <li className="h-[70px] flex items-center p-1">
           <Link href={"/about"}>About</Link>
         </li>

@@ -16,9 +16,9 @@ export default function RootLayout({
   return (
     <AuthProvider>
       <html lang="en">
-        <body className="mx-0 lg:mx-[min(25vw,50vh)] mt-10 ">
+        <body className="mx-0 lg:mx-[min(25vw,50vh)] mt-10">
           <NavMenu />
-          <main className="bg-white!">{children}</main>
+          <main className="!bg-white">{children}</main>
         </body>
       </html>
     </AuthProvider>
